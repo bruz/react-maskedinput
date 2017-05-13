@@ -179,8 +179,7 @@ var MaskedInput = React.createClass({
       }
       return
     }
-
-    if (e.key === 'Backspace') {
+    else if (e.key === 'Backspace') {
       e.preventDefault()
       this._updateMaskSelection()
       if (this.mask.backspace()) {
@@ -193,6 +192,9 @@ var MaskedInput = React.createClass({
           this.props.onChange(e)
         }
       }
+    }
+    else {
+      this._onKeyPress(e)
     }
   },
 
